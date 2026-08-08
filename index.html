@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aryan Farhadi - Lead XR & Unity Engineer specializing in Industrial Digital Twins, Enterprise VR/AR, Custom Multiplayer SDKs, and Standalone Meta Quest Optimization.">
+    <meta name="author" content="Aryan Farhadi">
+    <meta name="keywords" content="Aryan Farhadi, Lead XR Engineer, Unity Developer, Virtual Reality, Augmented Reality, Digital Twin, Meta Quest, OpenXR, XRoom, Unity 3D">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Aryan Farhadi | Lead XR & Unity Engineer">
+    <meta property="og:description" content="3+ years building production-grade VR/AR simulations for heavy industry, custom multiplayer SDKs (20 concurrent users, 30-40ms latency), and Meta Quest optimization.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.linkedin.com/in/aryanfarhadi/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/101009063?v=4">
+    
+    <title>Aryan Farhadi — Lead XR & Unity Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Mouse Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-avatar">
+                    <img src="https://avatars.githubusercontent.com/u/101009063?v=4" alt="Aryan Farhadi Avatar">
+                </span>
+                <span class="brand-text">Aryan<span class="highlight">Farhadi</span></span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link"><i data-lucide="user"></i> About</a>
+                <a href="#experience" class="nav-link"><i data-lucide="briefcase"></i> Experience</a>
+                <a href="#projects" class="nav-link"><i data-lucide="glasses"></i> XR Projects</a>
+                <a href="#demos" class="nav-link"><i data-lucide="play-circle"></i> Interactive XR Lab</a>
+                <a href="#skills" class="nav-link"><i data-lucide="cpu"></i> Skills</a>
+                <a href="#contact" class="nav-link"><i data-lucide="mail"></i> Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" class="icon-btn" title="GitHub Profile">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/aryanfarhadi/" target="_blank" rel="noopener" class="icon-btn" title="LinkedIn Profile">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <button class="btn btn-primary btn-sm nav-cta" id="openContactModal">
+                    <i data-lucide="send"></i> Let's Connect
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="badge-status">
+                        <span class="status-dot green-pulse"></span>
+                        Lead XR Engineer @ Dadehchin | Open to Senior VR/AR Roles
+                    </div>
+
+                    <h1 class="hero-title">
+                        Engineering Enterprise <br>
+                        <span class="text-gradient dynamic-role" id="dynamicRole">Industrial Digital Twins</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        XR & Unity Engineer with 3+ years building production-grade VR/AR simulations for heavy industry (steel, automotive, public safety). Shipped 10+ enterprise products including custom 20-user multiplayer SDKs (30–40ms latency), dynamic code execution engines, and stable 72 FPS standalone Meta Quest optimizations.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary btn-lg">
+                            <i data-lucide="glasses"></i> Explore VR/AR Projects
+                        </a>
+                        <a href="#demos" class="btn btn-secondary btn-lg">
+                            <i data-lucide="play-circle"></i> Try Interactive XR Demos
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Shipped VR/AR Projects</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">20 Users</span>
+                            <span class="stat-label">30-40ms VR Latency</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">72 FPS</span>
+                            <span class="stat-label">Standalone Quest 2/3</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-card">
+                            <span class="stat-number">~3 Mo &rarr; 0</span>
+                            <span class="stat-label">Safety Training Cut</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="code-window glass-card glow-purple">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="window-title">XRoomNetSDK.cs — Multiplayer XR Sync</div>
+                            <div class="window-badge">Unity 3D / OpenXR</div>
+                        </div>
+                        <div class="window-body">
+                            <pre class="code-block"><code><span class="token-keyword">public class</span> <span class="token-function">XRoomMultiplayerSDK</span> : <span class="token-type">MonoBehaviour</span> {
+    [<span class="token-keyword">SerializeField</span>] <span class="token-keyword">private</span> <span class="token-type">int</span> maxConcurrentUsers = <span class="token-number">20</span>;
+    [<span class="token-keyword">SerializeField</span>] <span class="token-keyword">private</span> <span class="token-type">float</span> targetFrameRate = <span class="token-number">72.0f</span>; <span class="token-comment">// Meta Quest</span>
+
+    <span class="token-keyword">public void</span> <span class="token-function">SynchronizeAvatarState</span>(<span class="token-type">UserRig</span> rig) {
+        <span class="token-comment">// 30-40ms UDP packet delta compression</span>
+        <span class="token-type">Vector3</span> headPos = rig.Head.transform.position;
+        <span class="token-type">Quaternion</span> handRot = rig.LeftHand.transform.rotation;
+        <span class="token-keyword">this</span>.NetworkLayer.<span class="token-function">BroadcastSpatialTransform</span>(headPos, handRot);
+    }
+}</code></pre>
+                        </div>
+                        <div class="window-footer">
+                            <span class="footer-stat"><i data-lucide="check-circle-2"></i> Quest 2/3 / OpenXR / Spatial Audio / CAD Pipeline Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Specialization -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="sparkles"></i> Industrial XR Specialization</span>
+                    <h2 class="section-title">Replacing High-Risk Onboarding with Virtual Environments</h2>
+                    <p class="section-description">
+                        Specializing in replacing dangerous and costly real-world training (steel mill overhead cranes, high-pressure industrial valves, firefighting) with high-fidelity, networked virtual simulations.
+                    </p>
+                </div>
+
+                <div class="pillars-grid">
+                    <div class="pillar-card glass-card">
+                        <div class="pillar-icon icon-purple">
+                            <i data-lucide="glasses"></i>
+                        </div>
+                        <h3>Standalone Meta Quest Optimization</h3>
+                        <p>Poly-reduction, CAD optimization pipelines, texture atlasing, occlusion culling, and custom volumetric particle shaders maintaining a rock-solid 72 FPS on standalone headsets.</p>
+                        <div class="pillar-tags">
+                            <span>OpenXR</span>
+                            <span>Meta Quest 2/3/Pro</span>
+                            <span>URP</span>
+                            <span>Occlusion Culling</span>
+                            <span>GPU Instancing</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card glass-card">
+                        <div class="pillar-icon icon-cyan">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3>Low-Latency Multiplayer SDKs</h3>
+                        <p>Custom client-server architecture scaling to 20 concurrent users per room with 30–40ms network latency, full-body avatars, spatial audio VoIP, and cross-platform sync (Quest, PC, Mobile).</p>
+                        <div class="pillar-tags">
+                            <span>Client-Server SDK</span>
+                            <span>Photon</span>
+                            <span>Mirror</span>
+                            <span>Spatial Audio</span>
+                            <span>WebSockets</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card glass-card">
+                        <div class="pillar-icon icon-green">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <h3>Industrial Digital Twins & AR Passthrough</h3>
+                        <p>Interactive 1:1 Digital Twins of heavy equipment (steel cranes, industrial threading valves, automotive engines) featuring AR passthrough for international trade shows.</p>
+                        <div class="pillar-tags">
+                            <span>Industrial Digital Twin</span>
+                            <span>AR Passthrough</span>
+                            <span>Mobarakeh Steel</span>
+                            <span>Azaran Machine</span>
+                            <span>Bilingual Localisation</span>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card glass-card">
+                        <div class="pillar-icon icon-amber">
+                            <i data-lucide="shield"></i>
+                        </div>
+                        <h3>Enterprise Kiosk MDM & Dynamic Execution</h3>
+                        <p>Custom Android MDM kiosk-mode launcher for headset fleet lockdown, remote app deployment, dynamic server-side scenario script execution, and safety analytics dashboards.</p>
+                        <div class="pillar-tags">
+                            <span>Dynamic Code Execution</span>
+                            <span>Enterprise MDM</span>
+                            <span>Kiosk Lockdown</span>
+                            <span>REST API</span>
+                            <span>Safety Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="briefcase"></i> Work History</span>
+                    <h2 class="section-title">Professional XR Experience</h2>
+                    <p class="section-description">
+                        Leading XR engineering teams and developing production-ready VR/AR applications for industrial clients.
+                    </p>
+                </div>
+
+                <div class="experience-timeline">
+                    <!-- Job 1 -->
+                    <div class="timeline-card glass-card">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">Lead XR Engineer</h3>
+                                <span class="job-company"><i data-lucide="building"></i> Dadehchin</span>
+                            </div>
+                            <span class="job-period"><i data-lucide="calendar"></i> Mar 2025 – Present</span>
+                        </div>
+                        <ul class="job-bullets">
+                            <li><strong>XRoom Platform Architecture:</strong> Lead engineer on a 2-person team building XRoom — a cross-platform (Meta Quest, PC, mobile) multi-user VR collaboration platform.</li>
+                            <li><strong>Multiplayer Sync Engine:</strong> Implemented the XRoom multiplayer layer scaling to 20 simultaneous users at 30–40ms network latency for corporate meetings, classroom education, and industrial training.</li>
+                            <li><strong>Dynamic Code Execution:</strong> Engineered a server-side dynamic script execution system allowing training scenarios to be updated without rebuilding or redeploying client apps.</li>
+                            <li><strong>Mobarakeh Steel Overhead Crane Simulator:</strong> Delivered a high-fidelity 5-scenario VR simulator for hazardous incidents impossible to rehearse on live equipment — reducing operator onboarding from ~3 months to headset training. Integrated custom industrial joysticks and safety analytics.</li>
+                            <li><strong>Enterprise MDM XR Launcher:</strong> Built kiosk-mode lockdown, remote app deployment, and real-time fleet status/battery monitoring via a web admin panel.</li>
+                            <li><strong>Firefighting VR Simulator:</strong> Developed procedural fire scenarios, physics-based hose mechanics, and custom volumetric particle shaders running at a stable 72 FPS on standalone Quest 2.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-card glass-card">
+                        <div class="job-header">
+                            <div>
+                                <h3 class="job-title">XR Developer</h3>
+                                <span class="job-company"><i data-lucide="building"></i> Ecoshaar</span>
+                            </div>
+                            <span class="job-period"><i data-lucide="calendar"></i> Feb 2024 – Feb 2025</span>
+                        </div>
+                        <ul class="job-bullets">
+                            <li><strong>Industrial Digital Twins:</strong> Engineered multiple concurrent enterprise XR products covering industrial Digital Twins, automotive training, and process visualization.</li>
+                            <li><strong>CAD Optimization Pipeline:</strong> Built a CAD asset optimization pipeline (polygon reduction, texture atlasing, occlusion culling) bringing high-poly industrial models to stable framerates on standalone Meta Quest.</li>
+                            <li><strong>IoT & Dashboard Backends:</strong> Designed REST API backends and SQL data layers connecting Unity VR environments to external industrial data sources for real-time monitoring dashboards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Showcase Section -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="folder-git-2"></i> Portfolio Showcase</span>
+                    <h2 class="section-title">Featured Enterprise XR & VR Projects</h2>
+                    <p class="section-description">
+                        Curated collection of shipped VR/AR simulations, industrial Digital Twins, and multiplayer collaboration platforms.
+                    </p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All XR Projects</button>
+                    <button class="filter-btn" data-filter="multiplayer">Multiplayer & VR</button>
+                    <button class="filter-btn" data-filter="digitaltwin">Industrial Digital Twins</button>
+                    <button class="filter-btn" data-filter="simulation">Safety & Physics Sim</button>
+                    <button class="filter-btn" data-filter="enterprise">Enterprise & MDM</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project 1: XRoom -->
+                    <article class="project-card glass-card" data-category="multiplayer enterprise">
+                        <div class="project-banner banner-cubino">
+                            <div class="project-badge"><i data-lucide="users"></i> Cross-Platform VR</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">XRoom — Cross-Platform VR Collaboration</h3>
+                            <p class="project-desc">Multi-user XR environment accessible from Meta Quest, PC, and mobile. Supports full-body avatars, real-time media sharing (images, video, PDF), purpose-built rooms, and dynamic server-side scenario loading. Scales to 20 concurrent users at 30–40ms latency.</p>
+                            <div class="project-tech">
+                                <span>Meta Quest 2/3</span>
+                                <span>Multiplayer SDK</span>
+                                <span>Dynamic Execution</span>
+                                <span>Spatial Audio</span>
+                                <span>OpenXR</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-demo" data-demo="xroom">
+                                    <i data-lucide="activity"></i> Launch Interactive Sync Simulator
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: VR Overhead Crane Simulator -->
+                    <article class="project-card glass-card" data-category="digitaltwin simulation">
+                        <div class="project-banner banner-compiler">
+                            <div class="project-badge"><i data-lucide="hard-hat"></i> Mobarakeh Steel</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">VR Overhead Crane Simulator</h3>
+                            <p class="project-desc">High-fidelity training simulator for overhead crane operators across 5 scenarios, including accident-risk situations impossible to rehearse on live equipment. Reduced operator onboarding from ~3 months to headset training. Features custom industrial joystick hardware integration.</p>
+                            <div class="project-tech">
+                                <span>Unity 3D</span>
+                                <span>Industrial Hardware</span>
+                                <span>Safety Analytics</span>
+                                <span>URP</span>
+                                <span>Steel Mill Sim</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-demo" data-demo="crane">
+                                    <i data-lucide="play"></i> Test Joystick Crane Control
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Industrial Valve Digital Twin -->
+                    <article class="project-card glass-card" data-category="digitaltwin">
+                        <div class="project-banner banner-arymem">
+                            <div class="project-badge"><i data-lucide="layers"></i> Azaran / AR Passthrough</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Industrial Valve Digital Twin (Azaran)</h3>
+                            <p class="project-desc">Complete 4-scenario Digital Twin of an industrial valve threading machine (visual inspection, hydrostatic testing, component analysis, AR assembly guide). Features bilingual (EN/FA) dynamic localization and AR passthrough mode replacing a 4-tonne physical machine at trade shows.</p>
+                            <div class="project-tech">
+                                <span>AR Passthrough</span>
+                                <span>Digital Twin</span>
+                                <span>Bilingual EN/FA</span>
+                                <span>CAD Pipeline</span>
+                                <span>Meta Quest Pro/3</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-demo" data-demo="valve">
+                                    <i data-lucide="eye"></i> Inspect AR Passthrough Model
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Firefighting & Safety Simulator -->
+                    <article class="project-card glass-card" data-category="simulation">
+                        <div class="project-banner banner-fogy">
+                            <div class="project-badge"><i data-lucide="flame"></i> Fire Department</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Firefighting & Safety VR Simulator</h3>
+                            <p class="project-desc">VR safety training for emergency services and public youth education. Trainees extinguish burning vehicles across procedurally generated scenarios. Features custom volumetric fire/smoke shaders and physics-based hose mechanics maintaining stable 72 FPS on Quest 2.</p>
+                            <div class="project-tech">
+                                <span>Volumetric Shaders</span>
+                                <span>Physics Mechanics</span>
+                                <span>Standalone Quest 2</span>
+                                <span>72 FPS Optimization</span>
+                            </div>
+                            <div class="project-footer">
+                                <button class="btn btn-outline btn-sm open-project-demo" data-demo="fire">
+                                    <i data-lucide="zap"></i> Run FPS & CAD Benchmark
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: MI16 Engine Digital Twin -->
+                    <article class="project-card glass-card" data-category="digitaltwin multiplayer">
+                        <div class="project-banner banner-unity">
+                            <div class="project-badge"><i data-lucide="wrench"></i> Automotive Training</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">MI16 Engine Digital Twin (Multiplayer)</h3>
+                            <p class="project-desc">Collaborative AR/VR tool for automotive engine assembly and disassembly training. Instructors and trainees share the same virtual engine in real time via custom client-server architecture synchronizing part state (grab, rotate, snap-fit) with integrated spatial-audio VoIP.</p>
+                            <div class="project-tech">
+                                <span>Multiplayer Sync</span>
+                                <span>Snap-Fit Physics</span>
+                                <span>Spatial VoIP</span>
+                                <span>Automotive AR/VR</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" class="btn btn-outline btn-sm">
+                                    <i data-lucide="github"></i> GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Enterprise MDM XR Launcher -->
+                    <article class="project-card glass-card" data-category="enterprise">
+                        <div class="project-banner banner-meta">
+                            <div class="project-badge"><i data-lucide="smartphone"></i> Fleet MDM</div>
+                            <div class="project-links">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" title="GitHub Repo"><i data-lucide="github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Enterprise MDM XR Kiosk Launcher</h3>
+                            <p class="project-desc">Android MDM-style custom launcher providing kiosk-mode lockdown for enterprise headset fleets, remote app deployment, and real-time headset battery/status monitoring across managed VR fleets via a web admin panel.</p>
+                            <div class="project-tech">
+                                <span>Android NDK/SDK</span>
+                                <span>Kiosk Lockdown</span>
+                                <span>Remote Deployment</span>
+                                <span>Web Admin Panel</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/AryanFarhadi" target="_blank" class="btn btn-outline btn-sm">
+                                    <i data-lucide="github"></i> GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demos Section -->
+        <section class="section demos-section" id="demos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="play"></i> Interactive XR Engineering Lab</span>
+                    <h2 class="section-title">Live Interactive Systems Simulators</h2>
+                    <p class="section-description">
+                        Experience real-time interactive simulations of Aryan Farhadi's core XR systems: <span class="text-highlight">XRoom Multiplayer</span>, <span class="text-highlight">VR Overhead Crane Control</span>, <span class="text-highlight">Azaran Digital Twin Passthrough</span>, and <span class="text-highlight">Standalone CAD Benchmark</span>.
+                    </p>
+                </div>
+
+                <div class="demo-container glass-card">
+                    <div class="demo-tabs">
+                        <button class="demo-tab active" data-tab="tab-xroom">
+                            <i data-lucide="users"></i> XRoom 20-User Network Sync
+                        </button>
+                        <button class="demo-tab" data-tab="tab-crane">
+                            <i data-lucide="hard-hat"></i> VR Crane Joystick & Safety Sim
+                        </button>
+                        <button class="demo-tab" data-tab="tab-valve">
+                            <i data-lucide="layers"></i> Azaran AR Passthrough Twin
+                        </button>
+                        <button class="demo-tab" data-tab="tab-fire">
+                            <i data-lucide="zap"></i> Standalone 72 FPS CAD Benchmark
+                        </button>
+                    </div>
+
+                    <!-- Demo 1: XRoom Network Simulator -->
+                    <div class="demo-panel active" id="tab-xroom">
+                        <div class="compiler-sandbox">
+                            <div class="sandbox-toolbar">
+                                <div class="preset-selector">
+                                    <label for="roomPreset"><i data-lucide="wifi"></i> Active VR Room:</label>
+                                    <select id="roomPreset">
+                                        <option value="room1">Room #01 — Mobarakeh Steel Operator Training (18 Users)</option>
+                                        <option value="room2">Room #02 — Corporate Classroom & PDF Media Sync (12 Users)</option>
+                                        <option value="room3">Room #03 — Firefighting Tactical Briefing (20 Users MAX)</option>
+                                    </select>
+                                </div>
+                                <div class="toolbar-actions">
+                                    <button class="btn btn-primary btn-sm" id="simulatePacketBtn">
+                                        <i data-lucide="refresh-cw"></i> Send Transform Packet
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="sandbox-grid">
+                                <div class="editor-pane">
+                                    <div class="pane-header">
+                                        <span><i data-lucide="activity"></i> Network Metrics (XRoom Custom Client-Server SDK)</span>
+                                        <span class="badge-lang">34 ms Latency</span>
+                                    </div>
+                                    <div style="padding: 20px; font-family: var(--font-mono); font-size: 0.85rem; color: #e2e8f0; display: flex; flex-direction: column; gap: 12px;">
+                                        <div><strong>Connected Headsets:</strong> <span style="color: #34d399;" id="userCountDisplay">18 / 20 Meta Quest Standalone</span></div>
+                                        <div><strong>UDP Spatial Packet Delta:</strong> <span style="color: #38bdf8;">Compressed 16-bit Quaternions</span></div>
+                                        <div><strong>VoIP Spatial Audio:</strong> <span style="color: #fde047;">48kHz Opus 3D Panning Active</span></div>
+                                        <div><strong>Dynamic Scenario Scripting:</strong> <span style="color: #c084fc;">Server-Side compiled script v2.4 (No client rebuild)</span></div>
+                                        <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px; margin-top: 10px;" id="networkStreamLog">
+                                            [00:01:04] [XRoomNet] User #04 (Headset: Quest 3) -> Position: (12.4, 1.8, -4.2) | Packet Size: 28 Bytes<br>
+                                            [00:01:04] [XRoomNet] User #11 (Headset: Quest 2) -> Spatial VoIP Stream Sync OK (32ms)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="output-pane">
+                                    <div class="pane-header">
+                                        <span><i data-lucide="cpu"></i> Server-Side Dynamic Code Execution</span>
+                                    </div>
+                                    <div style="padding: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: #38bdf8;">
+                                        <pre style="white-space: pre-wrap;">// Dynamic Scenario Script running on server
+void OnHazardousIncidentTrigger(PlayerRig user) {
+    if (user.GetJoystickInput().EmergencyBrakePressed) {
+        CraneMotor.CutPower();
+        Analytics.LogSafetyViolationEvent("CRANE_EMERGENCY_STOP_SUCCESS");
+    }
+}</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo 2: VR Crane Joystick & Safety Sim -->
+                    <div class="demo-panel" id="tab-crane">
+                        <div class="arymem-inspector">
+                            <div class="inspector-controls">
+                                <div class="control-group">
+                                    <label><i data-lucide="sliders"></i> Crane Scenario:</label>
+                                    <select id="craneScenarioSelect">
+                                        <option value="scen1">Scenario 1: Molten Steel Ladle Transport</option>
+                                        <option value="scen2">Scenario 2: Emergency Brake Failure Test</option>
+                                        <option value="scen3">Scenario 3: Blind-Spot Container Placement</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" id="triggerHazardBtn">
+                                    <i data-lucide="alert-triangle"></i> Simulate Hazardous Obstacle
+                                </button>
+                            </div>
+
+                            <div class="memory-grid-view">
+                                <div class="hex-table-container">
+                                    <h4 style="margin-bottom: 12px; font-size: 1rem;"><i data-lucide="gamepad-2"></i> Industrial Hardware Joystick State (Mobarakeh Steel)</h4>
+                                    <table class="hex-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Axis / Switch</th>
+                                                <th>Raw Voltage</th>
+                                                <th>Normalized Value</th>
+                                                <th>Safety Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="craneTableBody">
+                                            <tr>
+                                                <td>Hoist Lift Axis (Y)</td>
+                                                <td>2.45 V</td>
+                                                <td>+0.78 (Lifting)</td>
+                                                <td style="color:#34d399;">SAFE (Within Load Limit)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bridge Travel (X)</td>
+                                                <td>1.65 V</td>
+                                                <td>+0.12 (Slow Traverse)</td>
+                                                <td style="color:#34d399;">SAFE</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Trolley Cross (Z)</td>
+                                                <td>0.00 V</td>
+                                                <td>0.00 (Neutral)</td>
+                                                <td style="color:#34d399;">SAFE</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Emergency Brake</td>
+                                                <td>5.00 V</td>
+                                                <td>1 (Engaged)</td>
+                                                <td style="color:#34d399;">ACTIVE</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="inspector-sidebar">
+                                    <h4><i data-lucide="bar-chart-2"></i> Onboarding Analytics</h4>
+                                    <div class="pointer-card">
+                                        <span class="ptr-label">Training Onboarding Time:</span>
+                                        <span class="ptr-val" style="color: #34d399;">Reduced from 90 Days to 3 Days</span>
+                                        <span class="ptr-offset">Zero Machinery Downtime</span>
+                                        <div class="val-display">
+                                            <span>Hazardous Incident Safety Pass:</span>
+                                            <span class="val-num" id="safetyScore">98.4%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo 3: Azaran AR Passthrough Twin -->
+                    <div class="demo-panel" id="tab-valve">
+                        <div class="cubino-architecture">
+                            <div class="arch-header">
+                                <h3><i data-lucide="layers"></i> Azaran Industrial Valve Digital Twin (AR Passthrough)</h3>
+                                <p>Replaces 4-tonne physical machinery at trade shows with Meta Quest AR passthrough interactive 3D model.</p>
+                            </div>
+                            <div class="arch-diagram">
+                                <div class="node-card client-node">
+                                    <div class="node-icon"><i data-lucide="eye"></i></div>
+                                    <div class="node-title">AR Passthrough Mode</div>
+                                    <div class="node-status"><span class="dot green"></span> Real World Mesh Sync</div>
+                                </div>
+
+                                <div class="connection-line">
+                                    <span class="signal-badge">Bilingual EN / FA Dynamic Localisation</span>
+                                </div>
+
+                                <div class="node-card server-node">
+                                    <div class="node-icon"><i data-lucide="box"></i></div>
+                                    <div class="node-title">Interactive 4-Scenario Assembly</div>
+                                    <div class="node-status"><span class="dot green"></span> Hydrostatic Test Sim</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo 4: CAD Benchmark -->
+                    <div class="demo-panel" id="tab-fire">
+                        <div style="padding: 20px; font-family: var(--font-mono);">
+                            <h3 style="margin-bottom: 16px;"><i data-lucide="zap"></i> CAD Polygon Optimization & FPS Benchmark</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div style="background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                                    <h4 style="color: #f43f5e; margin-bottom: 10px;">Raw Industrial CAD Model</h4>
+                                    <div>Polygons: 1,450,000 tris</div>
+                                    <div>Texture Draw Calls: 340</div>
+                                    <div>Frame Rate on Quest 2: <span style="color: #f43f5e; font-weight:700;">18 FPS (Unusable)</span></div>
+                                </div>
+
+                                <div style="background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px solid rgba(16,185,129,0.3);">
+                                    <h4 style="color: #34d399; margin-bottom: 10px;">Aryan Farhadi CAD Pipeline</h4>
+                                    <div>Polygons: 48,000 tris (96.6% Reduction)</div>
+                                    <div>Atlased Texture Draw Calls: 6</div>
+                                    <div>Frame Rate on Quest 2: <span style="color: #34d399; font-weight:700;">72 FPS (STABLE TARGET)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack & Skill Matrix -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="layers"></i> Tech Stack</span>
+                    <h2 class="section-title">Technical Mastery & XR Toolset</h2>
+                    <p class="section-description">
+                        Comprehensive skill matrix based on Aryan Farhadi's official resume experience across Virtual/Augmented Reality, Unity 3D, and Graphics Pipelines.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="glasses"></i>
+                            <h3>XR & Platforms</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Unity 3D & C#</span>
+                                    <span class="skill-pct">98%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 98%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>OpenXR / XR Interaction Toolkit</span>
+                                    <span class="skill-pct">95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Meta Quest (2/3/Pro) Standalone</span>
+                                    <span class="skill-pct">95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>AR Foundation & Passthrough API</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="wifi"></i>
+                            <h3>Multiplayer & Networking</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Custom Client-Server XR SDK</span>
+                                    <span class="skill-pct">95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Photon / Mirror Networking</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Spatial Audio & VoIP Sync</span>
+                                    <span class="skill-pct">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>WebSockets & Real-Time Sync</span>
+                                    <span class="skill-pct">92%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="zap"></i>
+                            <h3>Rendering & Optimization</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>URP / HDRP / Shader Graph</span>
+                                    <span class="skill-pct">92%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>CAD Optimization & Occlusion Culling</span>
+                                    <span class="skill-pct">95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>GPU Instancing & Texture Atlasing</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Volumetric Particles & Custom Shaders</span>
+                                    <span class="skill-pct">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="contact-card glass-card">
+                    <div class="contact-header">
+                        <span class="section-tag"><i data-lucide="mail"></i> Get In Touch</span>
+                        <h2>Let's Build Extraordinary Industrial XR Simulations</h2>
+                        <p>Currently open to Lead & Senior XR Engineering positions, industrial Digital Twin projects, and high-impact VR/AR roles.</p>
+                    </div>
+
+                    <div class="contact-grid">
+                        <div class="contact-methods">
+                            <a href="https://www.linkedin.com/in/aryanfarhadi/" target="_blank" rel="noopener" class="contact-method-card">
+                                <div class="method-icon icon-linkedin">
+                                    <i data-lucide="linkedin"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">LinkedIn Profile</span>
+                                    <span class="method-value">linkedin.com/in/aryanfarhadi</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+                            </a>
+
+                            <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener" class="contact-method-card">
+                                <div class="method-icon icon-github">
+                                    <i data-lucide="github"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">GitHub Repositories</span>
+                                    <span class="method-value">github.com/AryanFarhadi</span>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+                            </a>
+
+                            <div class="contact-method-card" id="copyEmailCard">
+                                <div class="method-icon icon-mail">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Direct Email</span>
+                                    <span class="method-value" id="emailValue">aryanfarhadi13841384@gmail.com</span>
+                                </div>
+                                <button class="btn-copy" id="copyEmailBtn" title="Copy Email">
+                                    <i data-lucide="copy"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="formName">Your Name</label>
+                                <input type="text" id="formName" placeholder="e.g. Industrial Tech Lead" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail">Your Email</label>
+                                <input type="email" id="formEmail" placeholder="e.g. lead@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formMessage">Project / Role Inquiries</label>
+                                <textarea id="formMessage" rows="4" placeholder="Tell me about your enterprise VR/AR project, team, or opportunity..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                <i data-lucide="send"></i> Send Inquiry
+                            </button>
+                            <div class="form-feedback" id="formFeedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">Aryan<span class="highlight">Farhadi</span></span>
+                <span class="footer-copy">© 2026 Aryan Farhadi — Lead XR & Unity Engineer. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/AryanFarhadi" target="_blank" rel="noopener"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/aryanfarhadi/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i></a>
+                <a href="#hero" class="back-to-top" id="backToTop" title="Back to top">
+                    <i data-lucide="arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
